@@ -1,8 +1,10 @@
+cargo-features = ["edition2024"]
+
 [package]
 name = "telnet"
 description = "A simple implementation of telnet protocol."
-version = "0.2.0"
-edition = "2018"
+version = "0.3.0"
+edition = "2024"
 authors = ["SLMT <sam123456777@gmail.com>"]
 readme = "README.md"
 homepage = "https://github.com/SLMT/telnet-rs"
@@ -14,8 +16,8 @@ categories = ["network-programming"]
 exclude = [".travis*"]
 
 [dependencies]
-flate2 = { version = "1.0.22", optional = true }
+flate2 = { version = "1.0.30", optional = true }
 replace_with = { version = "0.1.7", optional = true }
 
 [features]
-zcstream = ["flate2", "replace_with"]
+zcstream = ["dep:flate2", "dep:replace_with"]
