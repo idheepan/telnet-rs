@@ -1,7 +1,4 @@
 /target/
 /examples/
-**/*.rs.bk
-Cargo.lock
-.tags*
-.idea
-.vscode
+.vscode/*
+!.vscode/extensions.json
