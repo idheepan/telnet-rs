@@ -1,5 +1,3 @@
-#![allow(clippy::must_use_candidate)]
-
 // A macro to reduce the code duplication in the definition of TelnetOption
 macro_rules! telnet_options {
     ($($byt:expr => $tno:ident),+) => {
@@ -11,6 +9,7 @@ macro_rules! telnet_options {
         }
 
         impl TelnetOption {
+            #[must_use]
             pub fn parse(byte: u8) -> TelnetOption {
                 match byte {
                     $($byt => TelnetOption::$tno,)+
@@ -18,6 +17,7 @@ macro_rules! telnet_options {
                 }
             }
 
+            #[must_use]
             pub fn as_byte(&self) -> u8 {
                 match *self {
                     $(TelnetOption::$tno => $byt,)+

@@ -125,7 +125,7 @@ impl Telnet {
         #[cfg(not(feature = "zcstream"))]
         return Ok(Telnet::from_stream(Box::new(stream), buf_size));
     }
-    /// Opens a telnet connection to a remote host using a TcpStream with a timeout [`Duration`]. Uses a [`TcpStream::connect_timeout`] under the hood
+    /// Opens a telnet connection to a remote host using a [`TcpStream`] with a timeout [`Duration`]. Uses a [`TcpStream::connect_timeout`] under the hood
     /// and so can only be passed a single address of type [`SocketAddr`], and passing a zero [`Duration`] results in an error.
     /// # Examples
     /// ```rust,should_panic
